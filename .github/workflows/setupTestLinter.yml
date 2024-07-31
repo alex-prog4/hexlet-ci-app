@@ -1,0 +1,11 @@
+name: setupTestLinter
+on: push
+jobs:
+  build:
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: make setup
+      - run: make start
+      - run: make test
+      - run: make lint
